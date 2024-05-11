@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Bamboo_Frontend', #this is the frontend app
+    'Bamboo_Backend', #this is the backend app
+    'rest_framework', #this is the rest framework
 ]
 
 MIDDLEWARE = [
