@@ -1,9 +1,27 @@
 import React from "react";
 import { render } from "react-dom";
 //import HomePage from "./HomePage";
+import Header from "./Header";
+
+/**
+ * <div className="App"> creates a div element with a CSS class of "App". 
+ * Any styles defined for the "App" class in your CSS will be applied to this div and its contents.
+ */
 
 const App = () => {
-  return <h1>Hello, World!</h1>;
+  return(
+    <div className = "App">
+        {/*Header*/}
+        <div className = "app__header">
+            <Header />
+        </div>
+    </div>
+
+
+
+  ) 
+  
+  ;
 }
 
 export default App;
