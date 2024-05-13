@@ -3,41 +3,31 @@
   color: #374149;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* Vertically aligns all items in the header */
   height: 64px;
   overflow: hidden;
 }
 
 .header__logo {
-  margin-left: 48px;
-}
-
-.header__search {
   display: flex;
-  align-items: center;
-  background-color: #374149;
-  height: 39px;
-  padding: 10px;
+  align-items: center; /* Vertically aligns the logo and logo text */
+  margin-left: 10px;
 }
 
-.header__search input {
-  border: none;
-  width: 375px;
-  margin-left: 5px;
-  margin-right: 10px;
-  background-color: rgb(55, 65, 73);
-  color: white;
-}
-
-.header__search input:focus {
-  outline: none;
+.header__logo-text {
+  margin-left: 20px !important; /* Increase this value */
+  font-size: 20px;
+  color: #fff;
 }
 
 .header__menuItems {
-  margin-right: 48px;
   display: flex;
+  align-items: center; /* Vertically aligns the menu items */
   gap: 10px;
+  margin-right: 48px;
 }
+
+/* Other styles... */
 
 .header__menuItems a {
   font-weight: bold;
@@ -52,4 +42,12 @@
 
 .header__menuItems a:first-of-type {
   color: #374149;
+}
+
+.header__logo-text {
+  margin-left: 10px; /* Add some space between the logo and the text */
+  font-size: 20px; /* Adjust the font size as needed */
+  color: #fff; /* Adjust the color as needed */
+  align-items: center; /* Add this line */
+  margin-top: -5px;
 }

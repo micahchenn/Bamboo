@@ -8,6 +8,7 @@ function Logo() {
   return (
     <div className="header__logo">
       <img src={MainLogo} width={25} />
+      <span className="header__logo-text">Harbinger</span> {/* Add this line */}
     </div>
   );
 }
@@ -45,7 +46,6 @@ function MenuItems() {
     return (
       <header className="header__wrapper">
         <Logo />
-        <Search />
         <MenuItems />
       </header>
     );
