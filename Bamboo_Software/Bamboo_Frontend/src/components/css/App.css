@@ -1,0 +1,14 @@
+/* App.css */
+
+.App {
+    /* Add styles for the App component here */
+    background-color: black;
+    color: white;
+    min-height: 100vh; /* This makes the App component take up at least the full height of the screen */
+  }
+  
+  .flex-container {
+    /* Add styles for the flex container here */
+    display: flex; /* This makes the children of the container (Sidebar and Home) sit next to each other */
+  }
+  

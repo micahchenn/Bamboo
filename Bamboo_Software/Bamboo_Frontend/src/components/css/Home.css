@@ -1,0 +1,7 @@
+
+/* Home.css */
+
+.Home {
+    flex: 1; /* This will make the Home component take up the remaining space after the Sidebar component */
+    overflow-y: auto; /* This will add a scrollbar if the content of the Home component is taller than the screen */
+  }

@@ -2,32 +2,27 @@ import React from "react";
 import { render } from "react-dom";
 //import HomePage from "./HomePage";
 import Header from "./Header";
-import Sidebar from "./Dashboard";
+import Sidebar from "./Sidebar";
+import Home from './Home';
+import "../css/App.css";
 
 /**
  * <div className="App"> creates a div element with a CSS class of "App". 
  * Any styles defined for the "App" class in your CSS will be applied to this div and its contents.
  */
 
+// App.js
+
 const App = () => {
-  return(
-    <div className = "App">
-        {/*Header*/}
-        <div className = "app__header">
-            <Header />
-        </div>
-        {/*Dashboard*/}
-        <Sidebar />
-
-
+  return (
+    <div className="App flex-container">
+      {/*Dashboard*/}
+      <Sidebar />
+      {/*Home Screen*/}
+      <Home />
     </div>
-
-
-
-  ) 
-  
-  ;
-}
+  );
+};
 
 export default App;
 
