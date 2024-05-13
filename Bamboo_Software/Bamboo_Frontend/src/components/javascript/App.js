@@ -1,30 +1,31 @@
-import React from "react";
-import { render } from "react-dom";
-//import HomePage from "./HomePage";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { render } from 'react-dom';
+import Sidebar from './Sidebar';
 import Home from './Home';
-import "../css/App.css";
-
-/**
- * <div className="App"> creates a div element with a CSS class of "App". 
- * Any styles defined for the "App" class in your CSS will be applied to this div and its contents.
- */
-
-// App.js
+import Header from './Header'; // Import the Header component
 
 const App = () => {
+  const [isSidebarExpanded, setSidebarExpanded] = useState(true);
+
   return (
-    <div className="App flex-container">
-      {/*Dashboard*/}
-      <Sidebar />
-      {/*Home Screen*/}
-      <Home />
-    </div>
+    <Router>
+      <Header /> {/* Include the Header component */}
+      <div className="App d-flex">
+        <div className={`Sidebar ${isSidebarExpanded ? 'expanded' : 'collapsed'}`}>
+          <Sidebar onToggle={() => setSidebarExpanded(!isSidebarExpanded)} />
+        </div>
+        <div className="Home flex-grow-1">
+          <Routes>
+            <Route path="investment-portfolio" element={<Home />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 };
 
 export default App;
 
-const appDiv = document.getElementById("app"); // This gets a reference to a DOM element with the ID "app". This is where the React application will be mounted.
-render(<App />, appDiv); // This mounts the React application to the DOM element with the ID "app". Does the actual rending
+const appDiv = document.getElementById("app");
+render(<App />, appDiv);

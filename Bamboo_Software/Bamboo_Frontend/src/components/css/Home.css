@@ -1,7 +1,24 @@
+.App {
+  height: 100vh;
+  overflow: hidden; /* Prevent scrollbars from appearing */
+}
 
-/* Home.css */
+.App .Home {
+  height: 100%;
+  flex-grow: 1;
+  background-color: #1E272E;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden
+}
 
-.Home {
-    flex: 1; /* This will make the Home component take up the remaining space after the Sidebar component */
-    overflow-y: auto; /* This will add a scrollbar if the content of the Home component is taller than the screen */
-  }
+.App .Home .box {
+  flex-basis: calc(50% - 60px);
+  height: calc(50vh - 40px);
+  background-color: #374149;
+  border-radius: 10px;
+  margin: 10px;
+}

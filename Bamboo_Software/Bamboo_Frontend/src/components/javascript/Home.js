@@ -4,10 +4,13 @@ import '../css/Home.css';
 import '../css/Sidebar.css';
 
 const Home = () => {
+  const boxes = Array(4).fill(null);
+
   return (
-    <div className="home">
-      <h1>Welcome to the Home Screen</h1>
-      {/* Add more content here */}
+    <div className="Home">
+      {boxes.map((_, index) => (
+        <div key={index} className="box" />
+      ))}
     </div>
   );
 };

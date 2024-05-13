@@ -1,14 +1,16 @@
-/* App.css */
-
 .App {
-    /* Add styles for the App component here */
-    background-color: black;
-    color: white;
-    min-height: 100vh; /* This makes the App component take up at least the full height of the screen */
-  }
-  
-  .flex-container {
-    /* Add styles for the flex container here */
-    display: flex; /* This makes the children of the container (Sidebar and Home) sit next to each other */
-  }
-  
+  display: flex;
+  overflow: hidden;
+}
+
+.Sidebar.expanded {
+  flex: 0 0 200px; /* Adjust this value to set the width of your Sidebar when expanded */
+}
+
+.Sidebar.collapsed {
+  flex: 0 0 50px; /* This will make the Sidebar collapse to a width of 0 */
+}
+
+.Home {
+  flex-grow: 1; /* This will make the Home component take up the remaining space */
+}

@@ -8,6 +8,7 @@
   padding: 20px 0;
   transition: width 0.3s ease;
   border-radius: 0; /* remove rounded edges */
+  overflow: hidden;
 }
 
 .sidebar:hover,
@@ -27,8 +28,8 @@
 .sidebar a {
   display: flex;
   align-items: center;
-  padding: 15px 10px;
-  margin: 10px 0; /* adjust this value to increase or decrease spacing */
+  padding: 10px 5px; /* Reduced padding */
+  margin: 5px 0; /* Reduced margin */
   color: #ffffff;
   text-decoration: none;
   width: 100%;
@@ -75,4 +76,9 @@
   width: 100%;
   font-weight: bold; /* makes the text bold */
   font-size: larger; /* makes the text larger */
+}
+
+
+body {
+  overflow: hidden; /* Prevent scrolling */
 }

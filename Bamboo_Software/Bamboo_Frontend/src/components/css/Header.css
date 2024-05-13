@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   height: 64px;
+  overflow: hidden;
 }
 
 .header__logo {

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
@@ -9,31 +10,29 @@ import MainLogo from '../../../static/images/robinhood.svg';
 import '../css/Sidebar.css';
 
 function Sidebar(props) {
-    const [isExpanded, setExpanded] = useState(true); // set to true
-    const [clickedItem, setClickedItem] = useState('');
-  
-    const handleClick = (itemName) => {
-      setClickedItem(itemName);
-      if (itemName === 'Dashboard') {
-        setExpanded(!isExpanded);
-      }
-      props.onItemSelect(itemName);
-    };
+  const [isExpanded, setExpanded] = useState(false); // set to true
+  const [clickedItem, setClickedItem] = useState('');
+
+  const handleClick = (event, itemName) => {
+    event.preventDefault(); // Prevent the default action
+    setClickedItem(itemName);
+    if (itemName === 'Dashboard') {
+      setExpanded(!isExpanded); // toggle the isExpanded state
+      props.onToggle(!isExpanded); // pass the new state up to the parent component
+    }
+    props.onItemSelect(itemName);
+  };
+
   return (
     <div className={`sidebar ${isExpanded ? 'open' : ''}`}>
       <ul>
-        <li>
-          <a href="#" onClick={() => handleClick('Home')}>
-            <img src={MainLogo} alt="Main Logo" className="logo" />
-            <span className="logo-text">HARBINGER</span>
-          </a>
-        </li>
-        <li><a href="#" onClick={() => handleClick('Dashboard')}><DashboardIcon /><span>Dashboard</span></a></li>
-        <li><a href="#" onClick={() => handleClick('Investment Portfolio')}><AccountBalanceWalletIcon /><span>Investment Portfolio</span></a></li>
-        <li><a href="#" onClick={() => handleClick('Crypto')}><MonetizationOnIcon /><span>Crypto</span></a></li>
-        <li><a href="#" onClick={() => handleClick('Retirement Account')}><AccountBalanceIcon /><span>Retirement Account</span></a></li>
-        <li><a href="#" onClick={() => handleClick('Trading Account')}><TrendingUpIcon /><span>Trading Account</span></a></li>
-        <li><a href="#" onClick={() => handleClick('Logout')}><LogoutIcon /><span>Logout</span></a></li>
+      <li>
+        <Link onClick={() => handleClick('Dashboard')}><DashboardIcon /><span>Dashboard</span></Link></li>
+        <li><Link to="/investment-portfolio" onClick={() => handleClick('Investment Portfolio')}><AccountBalanceWalletIcon /><span>Investment Portfolio</span></Link></li>
+        <li><Link to="/crypto" onClick={() => handleClick('Crypto')}><MonetizationOnIcon /><span>Crypto</span></Link></li>
+        <li><Link to="/retirement-account" onClick={() => handleClick('Retirement Account')}><AccountBalanceIcon /><span>Retirement Account</span></Link></li>
+        <li><Link to="/trading-account" onClick={() => handleClick('Trading Account')}><TrendingUpIcon /><span>Trading Account</span></Link></li>
+        <li><Link to="/logout" onClick={() => handleClick('Logout')}><LogoutIcon /><span>Logout</span></Link></li>
       </ul>
     </div>
   );
