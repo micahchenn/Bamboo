@@ -3,7 +3,7 @@
   overflow: hidden; /* Prevent scrollbars from appearing */
 }
 
-.App .Home {
+.App .Investment_Portfolio {
   flex-grow: 1;
   background-color: #1E272E;
   display: flex;
@@ -14,7 +14,7 @@
   overflow: hidden;
 }
 
-.App .Home .box {
+.App .Investment_Portfolio .box {
   flex-basis: calc(50% - 80px); /* Adjust this value */
   height: calc(50vh - 80px); /* Adjust this value */
   background-color: #374149;

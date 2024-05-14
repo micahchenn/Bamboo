@@ -2,7 +2,7 @@ import React from 'react';
 import MainLogo from '../../../static/images/robinhood.svg';
 import { TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import '../css/Header.css';
+import '../css/Default_Header.css';
 
 function Logo() {
   return (
@@ -34,15 +34,14 @@ function MenuItems() {
     return (
       <div className="header__menuItems">
         <a href="#">Free Stocks</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Cash</a>
-        <a href="#">Messages</a>
+        <a href="#">About us</a>
         <a href="#">Signup</a>
+        <a href="#">Login</a>
       </div>
     );
   }
   
-  function Header() {
+  function Default_Header() {
     return (
       <header className="header__wrapper">
         <Logo />
@@ -51,4 +50,4 @@ function MenuItems() {
     );
   }
   
-  export default Header;
+  export default Default_Header;

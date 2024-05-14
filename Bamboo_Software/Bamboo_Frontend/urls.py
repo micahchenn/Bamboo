@@ -7,5 +7,4 @@ urlpatterns = [
     path('', index), 
     path('investment-portfolio', index),
     path('home', index),
-    path('investment-portfolio/', index),
 ]
