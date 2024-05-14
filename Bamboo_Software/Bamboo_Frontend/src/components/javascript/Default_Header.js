@@ -3,6 +3,7 @@ import MainLogo from '../../../static/images/robinhood.svg';
 import { TextField, InputAdornment } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import '../css/Default_Header.css';
+import { Link } from 'react-router-dom';
 
 function Logo() {
   return (
@@ -30,16 +31,17 @@ function Search() {
   );
 }
 
+
 function MenuItems() {
-    return (
-      <div className="header__menuItems">
-        <a href="#">Free Stocks</a>
-        <a href="#">About us</a>
-        <a href="#">Signup</a>
-        <a href="#">Login</a>
-      </div>
-    );
-  }
+  return (
+    <div className="header__menuItems">
+      <Link to="/free-stocks">Free Stocks</Link>
+      <Link to="/about-us">About us</Link>
+      <Link to="/signup">Signup</Link>
+      <Link to="/login">Login</Link>
+    </div>
+  );
+}
   
   function Default_Header() {
     return (
