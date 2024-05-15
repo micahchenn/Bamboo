@@ -8,6 +8,7 @@ import Investment_Portfolio from './Investment_Portfolio';
 import Market_Watchlist from './Market_Watchlist'; // Import the Market_Watchlist component
 import Default_Page from './Default_Page';
 import Login from './Login';
+import Signup from './Signup';
 
 const MainContent = () => {
   const [isSidebarExpanded, setSidebarExpanded] = useState(true);
@@ -22,7 +23,8 @@ const MainContent = () => {
         <Routes>
           <Route path="investment-portfolio" element={<Investment_Portfolio />} />
           <Route path="market-watchlist" element={<Market_Watchlist />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} />
           <Route path="/" element={<Default_Page />} />
           <Route path="*" element={<Default_Page />} />
         </Routes>

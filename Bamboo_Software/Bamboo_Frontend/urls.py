@@ -10,5 +10,6 @@ urlpatterns = [
     path('market-watchlist', index),
     path('home', index),
     path('login', index),
+    path('signup', index),
     path('logout', index),
 ]
