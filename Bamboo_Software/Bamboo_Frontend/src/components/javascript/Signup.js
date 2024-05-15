@@ -1,47 +1,67 @@
 import React, { useState } from 'react';
-import '../css/Signup.css';  // Import the CSS
-const csrftoken = document.cookie.split('; ').find(row => row.startsWith('csrftoken')).split('=')[1];
 
-const Signup = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+function Signup() {
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+  const getCookie = (name) => {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+      const cookies = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === (name + '=')) {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
 
-        // Create an object with the form data
-        const data = { name, email, password };
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-        // Send a POST request to the signup view
-        fetch('signup/authenticate-signup', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRFToken': csrftoken,
-            },
-            body: JSON.stringify(data),
-        })
-        .then(response => response.text())  // Get the response text
-        .then(text => {
-            try {
-                return JSON.parse(text);  // Try to parse the text as JSON
-            } catch (error) {
-                console.log('Error parsing JSON:', error);
-                console.log('Raw response:', text);
-                throw error;
-            }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-    };
+    if (!firstName || !lastName || !email || !password) {
+      return;
+    }
+
+    const data = { firstName, lastName, email, password };
+    const csrftoken = getCookie('csrftoken');
+
+    fetch('signup/authenticate-signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrftoken,
+      },
+      body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.error) {
+        setMessage(data.error);
+      } else {
+        setMessage('Signup successful!');
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+  };
 
     return (
         <form onSubmit={handleSubmit} className="signup-form">
             <label>
-                Name:
-                <input type="text" value={name} onChange={e => setName(e.target.value)} />
+                First Name:
+                <input type="text" value={firstName} onChange={e => setFirstName(e.target.value)} />
+            </label>
+            <label>
+                Last Name:
+                <input type="text" value={lastName} onChange={e => setLastName(e.target.value)} />
             </label>
             <label>
                 Email:
@@ -52,6 +72,7 @@ const Signup = () => {
                 <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
             </label>
             <input type="submit" value="Submit" />
+            {message && <p>{message}</p>}
         </form>
     );
 };
