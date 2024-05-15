@@ -27,6 +27,7 @@ const MainContent = ({ isLoggedIn, onLogin }) => {
           <Route path="signup" element={<Signup />} />
           <Route path="/" element={<Default_Page />} />
           <Route path="logout" element={<Default_Page />} />
+          <Route path="*" element={<Default_Page />} />
         </Routes>
       </div>
     </div>
