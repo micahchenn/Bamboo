@@ -17,8 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 urlpatterns = [
     path('admin/', admin.site.urls), #this is included by default
     path('', include('Bamboo_Frontend.urls')), #if empty path, include the urls from Bamboo_Frontend
-    #path('backend/', include('Bamboo_Backend.urls')) #if path is api, include the urls from Bamboo_Backend
+    path('backend/', include('Bamboo_Backend.urls')) #if path is api, include the urls from Bamboo_Backend
 ]
