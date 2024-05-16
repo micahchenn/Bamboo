@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import '../css/Default_Page.css'; // Importing a CSS file
 
+
 const Default_Page = (props) => {
   useEffect(() => {
     if (props.onLogout) {

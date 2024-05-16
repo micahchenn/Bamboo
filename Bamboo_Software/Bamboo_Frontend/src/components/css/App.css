@@ -1,6 +1,6 @@
 .App {
   display: flex;
-  overflow: auto;
+  overflow: hidden;
   height: 100vh; /* Add this line */
 }
 
