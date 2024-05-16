@@ -1,4 +1,15 @@
-* {
+body, html {
+  height: 100%;
   margin: 0;
+  overflow: hidden; /* Prevent scrolling on the body and html elements */
 }
 
+#main {
+  height: 100%;
+  overflow: auto; /* Add a scrollbar to the main div when its content overflows */
+}
+
+#app {
+  height: 100%;
+  overflow: auto; /* Add a scrollbar to the app div when its content overflows */
+}

@@ -1,0 +1,54 @@
+.default-page {
+    font-family: Arial, sans-serif;
+    height: calc(100vh - 4em); /* Subtract the total padding from the height */
+    overflow: auto;
+    box-sizing: border-box;
+  }
+  
+  .default-page section {
+    padding: 2em;
+  }
+  
+  .default-page .intro {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .default-page .about {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .default-page .features {
+    background-color: #d0d0d0;
+    color: #333;
+  }
+  
+  .default-page .education {
+    background-color: #c0c0c0;
+    color: #333;
+  }
+  
+  .default-page .contact {
+    background-color: #b0b0b0;
+    color: #333;
+  }
+  
+  .default-page .investors {
+    background-color: #a0a0a0;
+    color: #333;
+  }
+  
+  .default-page .vision {
+    background-color: #909090;
+    color: #333;
+  }
+  
+  .default-page h1, .default-page h2 {
+    margin-bottom: 1em;
+  }
+  
+  .default-page p {
+    font-size: 1.2em;
+    overflow: auto;
+  }

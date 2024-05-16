@@ -1,6 +1,7 @@
 .App {
   display: flex;
-  overflow: hidden;
+  overflow: auto;
+  height: 100vh; /* Add this line */
 }
 
 .Sidebar.expanded {
@@ -13,4 +14,6 @@
 
 .Home {
   flex-grow: 1; /* This will make the Home component take up the remaining space */
+  overflow: auto; /* Add this line */
+  min-height: 0; /* Add this line */
 }

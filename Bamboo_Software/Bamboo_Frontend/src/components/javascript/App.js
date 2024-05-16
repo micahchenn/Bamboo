@@ -10,7 +10,7 @@ import Default_Page from './Default_Page';
 import Login from './Login';
 import Signup from './Signup';
 
-const MainContent = ({ isLoggedIn, onLogin }) => {
+const MainContent = ({ isLoggedIn, onLogin, onLogout }) => {
   const [isSidebarExpanded, setSidebarExpanded] = useState(true);
   const location = useLocation();
 
@@ -26,7 +26,7 @@ const MainContent = ({ isLoggedIn, onLogin }) => {
           <Route path="login" element={<Login onLogin={onLogin} />} />
           <Route path="signup" element={<Signup />} />
           <Route path="/" element={<Default_Page />} />
-          <Route path="logout" element={<Default_Page />} />
+          <Route path="logout" element={<Default_Page onLogout={onLogout} />} />
           <Route path="*" element={<Default_Page />} />
         </Routes>
       </div>
@@ -47,10 +47,14 @@ const App = () => {
     setIsLoggedIn(true);
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  };
+
   return (
     <Router>
       {isLoggedIn ? <Header /> : <Default_Header />}
-      <MainContent isLoggedIn={isLoggedIn} onLogin={handleLogin} />
+      <MainContent isLoggedIn={isLoggedIn} onLogin={handleLogin} onLogout={handleLogout} />
     </Router>
   );
 };

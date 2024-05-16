@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center; /* Vertically aligns all items in the header */
     height: 64px;
-    overflow: hidden;
+    overflow: auto;
   }
   
   .header__logo {

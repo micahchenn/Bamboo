@@ -8,7 +8,7 @@
   padding: 20px 0;
   transition: width 0.3s ease;
   border-radius: 0; /* remove rounded edges */
-  overflow: hidden;
+  overflow: auto;
 }
 
 .sidebar:hover,
