@@ -6,6 +6,9 @@ from django.contrib.auth.hashers import make_password
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import authenticate
+from Bamboo_Software import settings
+from django.core.mail import send_mail
+
 
 # Create your views here.
 def index(request, *args, **kwargs):
@@ -31,6 +34,22 @@ def signup(request):
         user = User(first_name=first_name, last_name=last_name, email=email, username=username)
         user.password = make_password(password)
         user.save()
+
+
+
+
+        #this it to send email
+        subject = 'Welcome to Harbinger Software'
+        message = 'Hello, This is Micah!\n' + first_name + 'We are glad to have you on board PLEASE BUY EVERYTHING AND GIVE US YOUR MONEY'
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [email]
+        num_sent = send_mail(subject, message, from_email, to_list, fail_silently=True)
+
+        if num_sent:
+            print("Email sent successfully")
+        else:
+            print("Failed to send email")
+
 
         return JsonResponse({'message': 'User created successfully'}, status=201)
 

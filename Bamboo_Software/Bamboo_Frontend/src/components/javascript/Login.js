@@ -33,7 +33,7 @@ function Login({ onLogin }) {
     })
     .catch((error) => {
       console.error('Error:', error);
-      setMessage('An error occurred. Please try again.');
+      setMessage('An error occurred. Please try again later.');
     });
   };
 
