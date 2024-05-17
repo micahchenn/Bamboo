@@ -13,4 +13,5 @@ urlpatterns = [
     path('login', index),
     path('signup', index),
     path('logout', index),
+    path('link-account', index),
 ]

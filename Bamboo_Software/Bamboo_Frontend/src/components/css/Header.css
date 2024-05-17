@@ -35,12 +35,12 @@
   text-decoration: none;
 }
 
-.header__menuItems a:hover,
-.header__menuItems a:active {
-  color: #374149;
+.header__menuItems a:first-of-type {
+  color: #ffffff;
 }
 
-.header__menuItems a:first-of-type {
+.header__menuItems a:first-of-type:hover,
+.header__menuItems a:first-of-type:active {
   color: #374149;
 }
 

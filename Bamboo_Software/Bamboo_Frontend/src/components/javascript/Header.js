@@ -33,11 +33,9 @@ function Search() {
 function MenuItems() {
     return (
       <div className="header__menuItems">
-        <a href="#">Free Stocks</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Cash</a>
-        <a href="#">Messages</a>
-        <a href="#">Signup</a>
+          <a href="/contactus">Contact Us</a>
+          <a href="/link-account">Link Account</a>
+          <a href="/myaccount">My Account</a>
       </div>
     );
   }

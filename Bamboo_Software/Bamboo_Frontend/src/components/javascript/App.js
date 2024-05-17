@@ -10,6 +10,7 @@ import Default_Page from './Default_Page';
 import Login from './Login';
 import Signup from './Signup';
 import Dashboard_Summary from './Dashboard_Summary';
+import Link_Account from './Link_Account';
 
 // MainContent is a functional component that takes three props: isLoggedIn, onLogin, and onLogout.
 const MainContent = ({ isLoggedIn, onLogin, onLogout }) => {
@@ -34,6 +35,7 @@ const MainContent = ({ isLoggedIn, onLogin, onLogout }) => {
           <Route path="market-watchlist" element={<Market_Watchlist />} />
           <Route path="login" element={<Login onLogin={onLogin} />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="link-account" element={<Link_Account />} />
           <Route path="/" element={<Default_Page />} />
           <Route path="logout" element={<Default_Page onLogout={onLogout} />} />
           {/* This route matches any path that hasn't been matched by the previous routes. */}
