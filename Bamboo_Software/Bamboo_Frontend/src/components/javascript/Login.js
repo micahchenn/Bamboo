@@ -28,7 +28,7 @@ function Login({ onLogin }) {
         // Call the onLogin function after a successful login
         onLogin();
         // Navigate to the investment portfolio page after a successful login
-        navigate('/investment-portfolio');
+        navigate('/my-dashboard');
       }
     })
     .catch((error) => {

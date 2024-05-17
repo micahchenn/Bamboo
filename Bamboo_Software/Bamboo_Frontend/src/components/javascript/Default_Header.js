@@ -43,13 +43,13 @@ function MenuItems() {
   );
 }
   
-  function Default_Header() {
-    return (
-      <header className="header__wrapper">
-        <Logo />
-        <MenuItems />
-      </header>
-    );
-  }
-  
-  export default Default_Header;
+function Default_Header() {
+  return (
+    <header className="header__wrapper transparent-header">
+      <Logo />
+      <MenuItems />
+    </header>
+  );
+}
+
+export default Default_Header;

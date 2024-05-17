@@ -17,7 +17,7 @@ material-ui: React components prebuilt that makes it easier to build functional 
 npm: npm (Node Package Manager) is the default package manager for the JavaScript runtime environment Node.js. 
      It is used to install, share, and manage software packages in Node.js projects.
 
+package.json/package-lock.json: This is automatically generated when you create a new app. It describes the exact tree that was generated for npm. I added npm run dev as a script for package.json to watch for changes when I edit the code
 
+index.html: In this code, the div with id="main" contains another div with id="app". This suggests that it might be used as a  main container for a JavaScript application (perhaps a React or Vue app) that mounts to the #app div.
 
-
-index.html: In your specific code, the div with id="main" contains another div with id="app". This suggests that it might be used as a  main container for a JavaScript application (perhaps a React or Vue app) that mounts to the #app div.

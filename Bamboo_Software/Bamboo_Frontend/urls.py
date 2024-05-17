@@ -3,6 +3,7 @@ from .views import index
 
 urlpatterns = [
     path('', index), 
+    path('my-dashboard', index),
     path('investment-portfolio', index),
     path('crypto', index),
     path('retirement-account', index),
