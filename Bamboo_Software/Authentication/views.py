@@ -40,8 +40,9 @@ def signup(request):
 
         #this it to send email
         subject = 'Welcome to Harbinger Software'
-        message = 'Hello, This is Micah!\n' + first_name + 'We are glad to have you on board'
+        message = 'Hello, This is Micah!\n' + first_name + ' We are glad to have you on board Welcome to Harbinger'
         from_email = settings.EMAIL_HOST_USER
+
         to_list = [email]
         num_sent = send_mail(subject, message, from_email, to_list, fail_silently=True)
 
