@@ -1,0 +1,53 @@
+.header__wrapper {
+  background-color: #374149;
+  color: #374149;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically aligns all items in the header */
+  height: 64px;
+  overflow: auto;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center; /* Vertically aligns the logo and logo text */
+  margin-left: 10px;
+}
+
+.header__logo-text {
+  margin-left: 20px !important; /* Increase this value */
+  font-size: 20px;
+  color: #fff;
+}
+
+.header__menuItems {
+  display: flex;
+  align-items: center; /* Vertically aligns the menu items */
+  gap: 10px;
+  margin-right: 48px;
+}
+
+/* Other styles... */
+
+.header__menuItems a {
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.header__menuItems a:first-of-type {
+  color: #ffffff;
+}
+
+.header__menuItems a:first-of-type:hover,
+.header__menuItems a:first-of-type:active {
+  color: #374149;
+}
+
+.header__logo-text {
+  margin-left: 10px; /* Add some space between the logo and the text */
+  font-size: 20px; /* Adjust the font size as needed */
+  color: #fff; /* Adjust the color as needed */
+  align-items: center; /* Add this line */
+  margin-top: -5px;
+}

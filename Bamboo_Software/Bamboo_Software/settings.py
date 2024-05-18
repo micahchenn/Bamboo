@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'Bamboo_Frontend', #this is the frontend app
     'Bamboo_Backend', #this is the backend app
     'rest_framework', #this is the rest framework
+    'corsheaders', #this is the cors headers
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', #this is the cors middleware
 ]
+
+REST_FRAMEWORK = {'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.AllowAny']}
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'Bamboo_Software.urls'
 

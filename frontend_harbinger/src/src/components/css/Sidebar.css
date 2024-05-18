@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.sidebar {
+  position: fixed;
+  width: 50px;
+  height: 100%;
+  background-color: #374149;
+  padding: 20px 0;
+  transition: width 0.3s ease;
+  border-radius: 0; /* remove rounded edges */
+  overflow: auto;
+}
+
+.sidebar:hover,
+.sidebar.open {
+  width: 200px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  padding: 10px 5px; /* Reduced padding */
+  margin: 5px 0; /* Reduced margin */
+  color: #ffffff;
+  text-decoration: none;
+  width: 100%;
+}
+
+.sidebar a:hover {
+  color: green;
+}
+
+.sidebar a:hover svg {
+  fill: green;
+  transform: scale(1.1); /* slightly enlarge the icons when hovered over */
+}
+
+.sidebar a svg {
+  margin-right: 10px;
+  fill: #ffffff;
+  border-radius: 50%; /* make the icons rounded */
+  transition: all 0.3s ease; /* smooth transition for hover effects */
+}
+
+.sidebar a span {
+  display: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px; /* adjust this value to increase or decrease letter spacing */
+}
+
+.sidebar:hover a span,
+.sidebar.open a span {
+  display: inline;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px; /* adjust this value to increase or decrease letter spacing */
+}
+
+.logo {
+  width: 35px; /* adjust this value to change the width of the logo */
+  height: 35px; /* adjust this value to change the height of the logo */
+}
+.logo-text {
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-weight: bold; /* makes the text bold */
+  font-size: larger; /* makes the text larger */
+}
+
+
+body {
+  overflow: hidden; /* Prevent scrolling */
+}

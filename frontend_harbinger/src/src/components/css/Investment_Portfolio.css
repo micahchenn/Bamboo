@@ -1,0 +1,29 @@
+.App {
+  height: 100vh;
+  overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+.App .Investment_Portfolio {
+  flex-grow: 1;
+  background-color: #1E272E;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end; /* Change this from space-around to flex-end */
+  align-items: flex-start;
+  padding: 10px 20px 10px 10px; /* Reduce the top padding */
+  overflow: hidden;
+}
+
+.App .Investment_Portfolio .box {
+  flex-basis: calc(50% - 80px); /* Adjust this value */
+  height: calc(50vh - 80px); /* Adjust this value */
+  background-color: #374149;
+  border-radius: 10px;
+  margin: 20px; /* Adjust this value */
+  overflow: auto; /* Add this line */
+}
+
+.box-text {
+  color: #fff; /* Make the text white */
+  /* Add other styles as needed */
+}

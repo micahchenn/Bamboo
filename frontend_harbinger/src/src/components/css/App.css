@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  overflow: hidden;
+  height: 100vh; /* Add this line */
+}
+
+.Sidebar.expanded {
+  flex: 0 0 200px; /* Adjust this value to set the width of your Sidebar when expanded */
+}
+
+.Sidebar.collapsed {
+  flex: 0 0 50px; /* This will make the Sidebar collapse to a width of 0 */
+}
+
+.Home {
+  flex-grow: 1; /* This will make the Home component take up the remaining space */
+  overflow: auto; /* Add this line */
+  min-height: 0; /* Add this line */
+}
